@@ -1,0 +1,8 @@
+- name: Install MongoDB
+  apt: name={{item}} state=latest
+  with_items:
+    - mongodb-org
+    - build-essential
+    - openssl
+    - libssl-dev
+    - pkg-config

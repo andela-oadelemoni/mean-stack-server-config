@@ -1,0 +1,19 @@
+--- # Test ansible connection
+- hosts: vagrant_box
+  remote_user: vagrant
+  become: yes
+  become_method: sudo
+  connection: ssh
+  gather_facts: no 
+  tasks:
+  - name: Test conditional
+    command: /bin/false
+    register: result
+    ignore_errors: yes
+  - debug: var=result
+  - name: When result FAILED
+    apt: update_cache=yes
+    when: result|failed
+  - name: When result SUCCESS
+    apt: update_cache=yes
+    when: result|success

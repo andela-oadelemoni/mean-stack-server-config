@@ -1,0 +1,26 @@
+## Connection and host
+# Determine the host
+# Specify the connection type
+# Specify the connection privilege
+# Connection method
+# Gather facts or not
+
+### Tasks broken down into roles
+
+## Role for MongoDB
+# Install MongoDB
+  - Import public key for mongo repo
+  - Create the source list file for MongoDB
+  - Update repository
+  - Install MongoDB
+# Setup/Configure MongoDB
+
+## Role for Express
+# Install Express / Setup Express environment
+
+## Role for AngularJS
+# Install Angular / Setup Angular environment
+
+## Role for Node.js
+# Install Node
+

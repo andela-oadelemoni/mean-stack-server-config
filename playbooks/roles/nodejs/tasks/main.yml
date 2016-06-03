@@ -1,0 +1,31 @@
+- name: Install Nodejs
+  apt: name={{item}} state=latest
+  register: result
+  with_items:
+    - nodejs
+    - git
+
+- debug: var=result
+
+- name: Clone sample MEAN.JS project
+  git: repo=https://github.com/meanjs/mean.git dest=/opt/mean
+  when: result|success
+
+- name: Install required packages
+  npm: name={{item}} global=yes state=latest
+  when: result|success
+  with_items:
+    - grunt-cli
+    - bower
+
+- name: Install sample app packages
+  npm: path=/opt/mean
+  when: result|success
+
+- name: Install bower packages
+  bower: path=/opt/mean
+
+- name: Start application with grunt
+  command: grunt --force arg1
+  args:
+    chdir: /opt/mean
