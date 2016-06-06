@@ -1,3 +1,4 @@
+# MEAN JS Server Config
 
 ######Step 1
 Run mean_stack.yml to setup MongoDB and NodeJS on your server
