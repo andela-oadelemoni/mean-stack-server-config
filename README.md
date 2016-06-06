@@ -1,7 +1,7 @@
 # MEAN JS Server Config (Ubuntu/Trusty64)
 
 ######Step 1
-Open config_vars.yml in playbooks/roles/common/files. Enter your server hostname and username.
+Open config_vars.yml in playbooks/roles/common/files. Enter your server `hostname` and `username`.
 
 ######Step 2
 Run mean_stack.yml to setup MongoDB and NodeJS on your server
