@@ -1,10 +1,12 @@
 --- # MEAN STACK CONFIGURATION
-- hosts: vagrant_box 
-  remote_user: vagrant
+- hosts: "{{hostname}}" 
+  remote_user: "{{user}}"
   become: yes
   become_method: sudo
   connection: ssh
   gather_facts: yes
+  vars_files:
+    - roles/common/files/config_vars.yml
   roles:
   - common
   - mongodb

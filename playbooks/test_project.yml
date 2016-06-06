@@ -1,9 +1,11 @@
 --- # Test project 
-- hosts: linuxacademy
-  remote_user: user
+- hosts: "{{hostname}}"
+  remote_user: "{{user}}"
   become: yes
   become_method: sudo
   connection: ssh
   gather_facts: yes
+  vars_files:
+    - roles/common/files/config_vars.yml
   roles:
-    - meanjs
+    - mean_app
