@@ -1,0 +1,4 @@
+- name: Start application with grunt
+  command: grunt --force arg1
+  args:
+    chdir: /opt/mean

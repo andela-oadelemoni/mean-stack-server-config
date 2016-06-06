@@ -1,0 +1,15 @@
+- name: Clone sample MEAN.JS project
+  git: repo=https://github.com/meanjs/mean.git dest=/opt/mean
+
+- name: Install Application Packages
+  npm: path=/opt/mean
+
+- name: Install Application Bower Packages
+  bower: path=/opt/mean
+
+- name: Make Correction to Application
+  template: src={{item}} dest=/opt/mean/config/lib/
+  with_items:
+    - express.js
+    - socket.io.js
+  notify: Start application with grunt

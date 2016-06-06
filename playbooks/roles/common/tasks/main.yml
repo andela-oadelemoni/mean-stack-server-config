@@ -8,9 +8,6 @@
 - name: Add MongoDB repository
   apt_repository: repo='deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' state=present
 
-# - name: Run Tee Command for MongoDB
-#   command: tee /etc/apt/sources.list.d/mongodb.list
-
 - name: Add apt key for nodesource
   apt_key: url=https://deb.nodesource.com/gpgkey/nodesource.gpg.key
 
